@@ -31,6 +31,11 @@ const faqs: FAQItem[] = [
       "When you map a site in Learn Mode and save it, that mapping automatically syncs to your team&apos;s shared library. Everyone on the team instantly gets access to it — no manual file sharing needed. New team members start with the full library already available. Only mappings are shared, never your provider data.",
   },
   {
+    question: "Can the extension come with default data or mappings pre-loaded?",
+    answer:
+      "Yes! The extension can be bundled with default sources that are automatically included when anyone downloads it. This can include: (1) Pre-configured mappings for common state board sites, (2) Template provider data structures, or (3) Default field mappings. When you package the extension, you can include a default data file that all users get on first install. This ensures everyone starts with the same baseline mappings and can begin using the extension immediately without manual setup.",
+  },
+  {
     question: "How do I add provider information?",
     answer:
       "You can add providers in two ways: (1) CSV Import: Click the ⚡ icon → Providers tab → Import CSV, then select your spreadsheet file. The CSV should have columns for name, NPI, DEA, addresses, credentials, etc. (2) Manual Entry: Click the ⚡ icon → Providers tab → + Add Provider, then fill out the form with the provider&apos;s information. You can add as many fields as needed — personal info, credentials, education, employment, addresses, and more.",

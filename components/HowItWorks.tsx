@@ -8,7 +8,7 @@ const steps = [
     number: "1",
     title: "Load Your Providers",
     description:
-      "Add provider information either by importing a CSV file (with columns for name, NPI, DEA, addresses, credentials, etc.) or by manually entering each provider through the extension&apos;s form. The extension stores everything locally — names, NPIs, DEA numbers, addresses, education, credentials, all 80+ fields.",
+      "Add provider information either by importing a CSV file (with columns for name, NPI, DEA, addresses, credentials, etc.) or by manually entering each provider through the extension&apos;s form. The extension can also come pre-loaded with default provider templates or data sources that are automatically included when you download it. The extension stores everything locally — names, NPIs, DEA numbers, addresses, education, credentials, all 80+ fields.",
     icon: (
       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path

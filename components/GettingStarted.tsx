@@ -16,7 +16,7 @@ const steps = [
     number: "2",
     title: "Add Your First Provider",
     description:
-      "Click the ⚡ icon in your toolbar → Providers tab → + Add Provider (fill out the form) or Import CSV (upload a spreadsheet). You can add providers manually one at a time, or import multiple providers at once from a CSV file with columns like Name, NPI, DEA, Address, etc.",
+      "If the extension came with default provider data, it&apos;s already loaded! Otherwise, click the ⚡ icon in your toolbar → Providers tab → + Add Provider (fill out the form) or Import CSV (upload a spreadsheet). You can add providers manually one at a time, or import multiple providers at once from a CSV file with columns like Name, NPI, DEA, Address, etc.",
   },
   {
     number: "3",
