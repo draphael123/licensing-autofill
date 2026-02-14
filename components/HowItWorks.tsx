@@ -57,12 +57,17 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-white">
+    <section id="how-it-works" className="py-24 bg-white border-t border-gray-200/50">
       <div className="max-w-7xl mx-auto px-4">
         <AnimatedSection>
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-16 text-center">
-            Three steps. That&apos;s it.
-          </h2>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4 tracking-tight">
+              Three steps. That&apos;s it.
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              No complex setup. No training required. Just results.
+            </p>
+          </div>
         </AnimatedSection>
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => (
@@ -74,33 +79,36 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className={`relative ${
                   step.highlight
-                    ? "bg-accent/10 rounded-card-lg p-8 border-2 border-accent"
+                    ? "bg-accent/5 rounded-lg p-8 border border-accent/20"
                     : "p-8"
                 }`}
               >
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-start gap-4 mb-6">
                   <div
-                    className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold ${
+                    className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-lg font-semibold ${
                       step.highlight
                         ? "bg-accent text-white"
-                        : "bg-primary text-white"
+                        : "bg-gray-900 text-white"
                     }`}
                   >
                     {step.number}
                   </div>
-                  <div className={`${step.highlight ? "text-accent" : "text-primary"}`}>
-                    {step.icon}
+                  <div className="flex-1">
+                    <div className={`w-10 h-10 mb-4 ${step.highlight ? "text-accent" : "text-gray-400"}`}>
+                      {step.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-primary mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">{step.description}</p>
+                    {step.highlight && (
+                      <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 rounded-md text-xs font-medium text-accent">
+                        <span>✨</span>
+                        <span>Key differentiator — map once, entire team benefits instantly</span>
+                      </div>
+                    )}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                {step.highlight && (
-                  <div className="mt-4 text-sm font-medium text-accent">
-                    ✨ Key differentiator — map once, entire team benefits instantly
-                  </div>
-                )}
               </motion.div>
             </AnimatedSection>
           ))}

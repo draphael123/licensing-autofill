@@ -75,7 +75,7 @@ export default function FieldSchema() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   return (
-    <section id="field-schema" className="py-20 bg-white">
+    <section id="field-schema" className="py-24 bg-white border-t border-gray-200/50">
       <div className="max-w-5xl mx-auto px-4">
         <AnimatedSection>
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4 text-center">
@@ -94,7 +94,7 @@ export default function FieldSchema() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="border-2 border-gray-200 rounded-card-lg overflow-hidden hover:border-accent transition-colors"
+                className="border border-gray-200/60 rounded-lg overflow-hidden hover:border-gray-300 transition-colors"
               >
                 <button
                   onClick={() =>

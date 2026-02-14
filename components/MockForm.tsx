@@ -109,10 +109,15 @@ export default function MockForm({ mode = "autofill" }: MockFormProps) {
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      <div className="bg-white rounded-card-lg shadow-lg p-8 border border-gray-200">
-        <h3 className="text-lg font-semibold text-primary mb-6">
-          State Board Application Form
-        </h3>
+      <div className="bg-white rounded-lg shadow-xl p-8 border border-gray-200/60">
+        <div className="flex items-center gap-2 mb-6">
+          <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+          <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+          <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+          <h3 className="text-sm font-medium text-gray-500 ml-4">
+            State Board Application Form
+          </h3>
+        </div>
         <div className="space-y-4">
           {fields.map((field, index) => (
             <div key={field.id} className="relative">
@@ -124,12 +129,12 @@ export default function MockForm({ mode = "autofill" }: MockFormProps) {
                   type="text"
                   value={field.value}
                   readOnly
-                  className={`w-full px-4 py-2.5 border-2 rounded-lg transition-all duration-300 ${
+                  className={`w-full px-3 py-2 text-sm border rounded-md transition-all duration-200 ${
                     field.filled
-                      ? "border-success bg-green-50"
+                      ? "border-success/50 bg-success/5"
                       : selectedField === field.id && learnModeActive
-                      ? "border-accent bg-blue-50"
-                      : "border-gray-300 bg-white"
+                      ? "border-accent/50 bg-accent/5"
+                      : "border-gray-200 bg-gray-50/50"
                   }`}
                 />
                 {field.filled && (

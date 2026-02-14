@@ -65,7 +65,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="border-2 border-gray-200 rounded-card-lg overflow-hidden bg-white hover:border-accent transition-colors"
+                className="border border-gray-200/60 rounded-lg overflow-hidden bg-white hover:border-gray-300 transition-colors"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}

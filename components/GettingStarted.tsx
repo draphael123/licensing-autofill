@@ -34,12 +34,17 @@ const steps = [
 
 export default function GettingStarted() {
   return (
-    <section id="getting-started" className="py-20 bg-white">
+    <section id="getting-started" className="py-24 bg-white border-t border-gray-200/50">
       <div className="max-w-5xl mx-auto px-4">
         <AnimatedSection>
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-12 text-center">
-            Up and running in 5 minutes.
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4 tracking-tight">
+              Up and running in 5 minutes
+            </h2>
+            <p className="text-gray-500 text-lg">
+              Quick setup, immediate results
+            </p>
+          </div>
         </AnimatedSection>
         <div className="space-y-8">
           {steps.map((step, index) => (
@@ -50,10 +55,10 @@ export default function GettingStarted() {
                 viewport={{ once: true }}
                 className="flex gap-6 items-start"
               >
-                <div className="flex-shrink-0 w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 text-white rounded-lg flex items-center justify-center text-lg font-semibold">
                   {step.number}
                 </div>
-                <div className="flex-1 bg-background-alt rounded-card-lg p-6">
+                <div className="flex-1 bg-background-alt rounded-lg p-6 border border-gray-200/60">
                   <h3 className="text-2xl font-bold text-primary mb-3">
                     {step.title}
                   </h3>

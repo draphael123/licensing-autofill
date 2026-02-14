@@ -53,25 +53,32 @@ const problems = [
 
 export default function ProblemSection() {
   return (
-    <section id="problem" className="py-20 bg-background-alt">
+    <section id="problem" className="py-24 bg-background-alt border-t border-gray-200/50">
       <div className="max-w-7xl mx-auto px-4">
         <AnimatedSection>
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-12 text-center">
-            Every application. Every state. The same 50 fields.
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4 tracking-tight">
+              Every application. Every state. The same 50 fields.
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              The licensing process shouldn&apos;t be this repetitive
+            </p>
+          </div>
         </AnimatedSection>
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
+        <div className="grid md:grid-cols-3 gap-6">
           {problems.map((problem, index) => (
             <AnimatedSection key={problem.title} delay={index * 0.1}>
               <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-card-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-300"
+                whileHover={{ y: -2 }}
+                className="bg-white rounded-lg p-8 border border-gray-200/60 hover:border-gray-300 transition-all duration-200 h-full"
               >
-                <div className="text-accent mb-4">{problem.icon}</div>
-                <h3 className="text-2xl font-bold text-primary mb-4">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-5">
+                  {problem.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-primary mb-3">
                   {problem.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-[15px]">
                   {problem.description}
                 </p>
               </motion.div>

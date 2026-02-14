@@ -5,7 +5,7 @@ import MockForm from "./MockForm";
 
 export default function LearnModeDemo() {
   return (
-    <section id="learn-mode" className="py-20 bg-background-alt">
+    <section id="learn-mode" className="py-24 bg-background-alt border-t border-gray-200/50">
       <div className="max-w-7xl mx-auto px-4">
         <AnimatedSection>
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8 text-center">
