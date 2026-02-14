@@ -33,7 +33,12 @@ const faqs: FAQItem[] = [
   {
     question: "How do I select a provider when filling forms?",
     answer:
-      "Click the ⚡ extension icon in your Chrome toolbar to open the extension popup. Go to the &quot;Auto Fill&quot; tab, and you&apos;ll see a dropdown list of all your providers. Select the provider you want, then click &quot;Auto Fill This Page&quot; to populate the form with that provider&apos;s data.",
+      "Click the ⚡ extension icon in your Chrome toolbar to open the extension popup. Go to the &quot;Auto Fill&quot; tab, and you&apos;ll see a searchable dropdown list showing all your providers. Each provider displays their name, NPI number, and other key identifiers to help you find the right one. You can type to search by name or NPI. Select the provider you want, then click &quot;Auto Fill This Page&quot; to populate the form with that provider&apos;s data.",
+  },
+  {
+    question: "What information is shown when selecting a provider?",
+    answer:
+      "The provider dropdown displays each provider&apos;s full name, NPI number, and specialty (if available) to help you quickly identify the right provider. You can search by typing any part of the name or NPI. This makes it easy to find the provider you need even if you have dozens or hundreds in your database.",
   },
   {
     question: "What if a field doesn&apos;t fill correctly?",
