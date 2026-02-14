@@ -36,6 +36,11 @@ const faqs: FAQItem[] = [
       "Yes! You can provide an Excel file with provider data, and it will be converted and bundled as the default data source. Simply export your Excel file to CSV, convert it to JSON format, and place it in the extension&apos;s `data/default-data.json` file. When users install the extension, this default data is automatically loaded. You can also include pre-configured mappings for common state board sites. See the BUNDLING_DEFAULT_DATA.md guide for step-by-step instructions on converting Excel files and bundling default data.",
   },
   {
+    question: "If I update the default data file, will it erase existing user mappings?",
+    answer:
+      "No! When you update the default data file (by providing a new Excel file), the extension uses a merge strategy that preserves all user data. User-created mappings are never overwritten. New default providers are added to the existing list, and new default mappings are merged in (avoiding duplicates). Your existing mappings and provider data remain intact. The extension tracks the version of default data and only merges in new items when the version changes. See BUNDLING_DEFAULT_DATA.md for detailed update strategies.",
+  },
+  {
     question: "How do I add provider information?",
     answer:
       "You can add providers in two ways: (1) CSV Import: Click the ⚡ icon → Providers tab → Import CSV, then select your spreadsheet file. The CSV should have columns for name, NPI, DEA, addresses, credentials, etc. (2) Manual Entry: Click the ⚡ icon → Providers tab → + Add Provider, then fill out the form with the provider&apos;s information. You can add as many fields as needed — personal info, credentials, education, employment, addresses, and more.",

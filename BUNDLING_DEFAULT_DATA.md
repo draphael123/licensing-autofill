@@ -2,6 +2,16 @@
 
 This guide explains how to include a default data file that gets automatically loaded when users install the extension.
 
+## ⚠️ Important: Updating Default Data
+
+**When you update the default data file (e.g., provide a new Excel file), the extension will:**
+- ✅ **Preserve all user-created mappings** - Never overwritten
+- ✅ **Merge new default providers** - Added to existing list
+- ✅ **Merge new default mappings** - Added without duplicates
+- ❌ **Never delete user data** - All user modifications are kept
+
+This means you can update the source file periodically without losing any user work!
+
 ## Quick Start: Using an Excel File
 
 **Yes, you can provide an Excel file!** Here's the simplest workflow:
@@ -239,23 +249,30 @@ When you create the ZIP file for distribution:
 4. **Keep It Small**: Default data files should be reasonably sized to avoid slow extension loads
 5. **Document the Format**: Make sure your default data matches the expected format your extension uses
 
-## Example: Updating Default Data
+## Example: Updating Default Data (Preserving User Data)
 
-If you need to update the default data in a future version:
+**Important:** When updating the default data file, you want to preserve existing user data and mappings. Here's how to handle updates safely:
+
+### Strategy 1: Merge New Providers, Preserve All Mappings
 
 ```javascript
 chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === 'update') {
     const defaultData = await loadDefaultData();
-    const current = await chrome.storage.local.get(['mappings', 'defaultDataVersion']);
+    const current = await chrome.storage.local.get([
+      'mappings', 
+      'providers', 
+      'defaultDataVersion',
+      'userProviders' // Track which providers user added
+    ]);
     
     // Only update if version changed
     if (defaultData.version !== current.defaultDataVersion) {
-      // Merge new default mappings with existing user mappings
+      // PRESERVE ALL USER MAPPINGS - never overwrite
       const existingMappings = current.mappings || [];
       const newDefaultMappings = defaultData.mappings || [];
       
-      // Combine, avoiding duplicates
+      // Merge mappings, avoiding duplicates by URL pattern
       const updatedMappings = [...existingMappings];
       newDefaultMappings.forEach(newMapping => {
         const exists = updatedMappings.some(m => m.urlPattern === newMapping.urlPattern);
@@ -264,14 +281,152 @@ chrome.runtime.onInstalled.addListener(async (details) => {
         }
       });
       
+      // MERGE PROVIDERS - add new ones, keep existing
+      const existingProviders = current.providers || [];
+      const newDefaultProviders = defaultData.providers || [];
+      const existingProviderIds = new Set(
+        existingProviders.map(p => p.id || `${p.firstName}-${p.lastName}-${p.npi}`)
+      );
+      
+      // Add new default providers that don't already exist
+      const mergedProviders = [...existingProviders];
+      newDefaultProviders.forEach(newProvider => {
+        const providerId = newProvider.id || `${newProvider.firstName}-${newProvider.lastName}-${newProvider.npi}`;
+        if (!existingProviderIds.has(providerId)) {
+          mergedProviders.push(newProvider);
+        }
+      });
+      
       await chrome.storage.local.set({
-        mappings: updatedMappings,
+        mappings: updatedMappings, // All mappings preserved
+        providers: mergedProviders, // User providers + new defaults
+        defaultDataVersion: defaultData.version
+      });
+      
+      console.log('Default data updated without losing user data');
+    }
+  }
+});
+```
+
+### Strategy 2: Update Providers, Never Touch Mappings
+
+If you only want to update the provider list from your Excel file:
+
+```javascript
+chrome.runtime.onInstalled.addListener(async (details) => {
+  if (details.reason === 'update') {
+    const defaultData = await loadDefaultData();
+    const current = await chrome.storage.local.get(['mappings', 'providers', 'defaultDataVersion']);
+    
+    if (defaultData.version !== current.defaultDataVersion) {
+      // NEVER TOUCH USER MAPPINGS - they are always preserved
+      const existingMappings = current.mappings || [];
+      
+      // Update providers: merge new defaults with existing
+      const existingProviders = current.providers || [];
+      const newDefaultProviders = defaultData.providers || [];
+      
+      // Create a map of existing providers by NPI (or your unique identifier)
+      const providerMap = new Map();
+      existingProviders.forEach(p => {
+        const key = p.npi || `${p.firstName}-${p.lastName}`;
+        providerMap.set(key, p);
+      });
+      
+      // Add/update providers from default data
+      newDefaultProviders.forEach(newProvider => {
+        const key = newProvider.npi || `${newProvider.firstName}-${newProvider.lastName}`;
+        if (!providerMap.has(key)) {
+          // New provider - add it
+          providerMap.set(key, newProvider);
+        } else {
+          // Provider exists - you can choose to update or skip
+          // Option A: Skip (preserve user's version)
+          // Option B: Update (replace with new default)
+          // providerMap.set(key, newProvider);
+        }
+      });
+      
+      const mergedProviders = Array.from(providerMap.values());
+      
+      await chrome.storage.local.set({
+        mappings: existingMappings, // Mappings never change
+        providers: mergedProviders, // Updated provider list
         defaultDataVersion: defaultData.version
       });
     }
   }
 });
 ```
+
+### Strategy 3: Track User-Modified Data
+
+For more control, track what users have modified:
+
+```javascript
+// On first install
+chrome.runtime.onInstalled.addListener(async (details) => {
+  if (details.reason === 'install') {
+    const defaultData = await loadDefaultData();
+    await chrome.storage.local.set({
+      mappings: defaultData.mappings || [],
+      providers: defaultData.providers || [],
+      defaultDataVersion: defaultData.version,
+      userModifiedMappings: [], // Track which mappings user created/modified
+      userAddedProviders: [] // Track which providers user added
+    });
+  }
+  
+  if (details.reason === 'update') {
+    const defaultData = await loadDefaultData();
+    const current = await chrome.storage.local.get([
+      'mappings',
+      'providers',
+      'defaultDataVersion',
+      'userModifiedMappings',
+      'userAddedProviders'
+    ]);
+    
+    if (defaultData.version !== current.defaultDataVersion) {
+      // Preserve user-modified mappings
+      const userMappings = current.mappings.filter(m => 
+        current.userModifiedMappings.includes(m.urlPattern)
+      );
+      
+      // Add new default mappings
+      const newDefaultMappings = defaultData.mappings || [];
+      const existingDefaultMappings = current.mappings.filter(m => 
+        !current.userModifiedMappings.includes(m.urlPattern)
+      );
+      
+      // Merge: user mappings + existing defaults + new defaults
+      const allMappings = [...userMappings, ...existingDefaultMappings];
+      newDefaultMappings.forEach(newMapping => {
+        const exists = allMappings.some(m => m.urlPattern === newMapping.urlPattern);
+        if (!exists) {
+          allMappings.push(newMapping);
+        }
+      });
+      
+      // Similar logic for providers...
+      
+      await chrome.storage.local.set({
+        mappings: allMappings,
+        defaultDataVersion: defaultData.version
+      });
+    }
+  }
+});
+```
+
+## Key Principles for Updates
+
+1. **Never overwrite user mappings** - User-created mappings should always be preserved
+2. **Merge, don't replace** - Add new default data to existing data
+3. **Use unique identifiers** - Use NPI, URL patterns, or IDs to avoid duplicates
+4. **Version your data** - Track which version of default data is installed
+5. **Give users control** - Consider letting users choose to reset to defaults if needed
 
 ## Testing
 
