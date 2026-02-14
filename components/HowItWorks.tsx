@@ -41,7 +41,7 @@ const steps = [
     number: "3",
     title: "Auto Fill in Seconds",
     description:
-      "Next time you visit that site, select a provider, click Auto Fill, and watch every field populate instantly. Review, submit, done.",
+      "Next time you visit that site, click the ⚡ extension icon, select a provider from the dropdown, click Auto Fill, and watch every field populate instantly. Review, submit, done.",
     icon: (
       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path

@@ -28,7 +28,7 @@ const steps = [
     number: "4",
     title: "Fill Your First Form",
     description:
-      "Same site, Auto Fill tab → Select provider → ⚡ Auto Fill This Page",
+      "Same site, click ⚡ → Auto Fill tab → Select provider from dropdown → Click &quot;Auto Fill This Page&quot;",
   },
 ];
 

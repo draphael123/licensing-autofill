@@ -31,6 +31,11 @@ const faqs: FAQItem[] = [
       "When you map a site in Learn Mode and save it, that mapping automatically syncs to your team&apos;s shared library. Everyone on the team instantly gets access to it — no manual file sharing needed. New team members start with the full library already available. Only mappings are shared, never your provider data.",
   },
   {
+    question: "How do I select a provider when filling forms?",
+    answer:
+      "Click the ⚡ extension icon in your Chrome toolbar to open the extension popup. Go to the &quot;Auto Fill&quot; tab, and you&apos;ll see a dropdown list of all your providers. Select the provider you want, then click &quot;Auto Fill This Page&quot; to populate the form with that provider&apos;s data.",
+  },
+  {
     question: "What if a field doesn&apos;t fill correctly?",
     answer:
       "The extension shows a fill report after every auto-fill. Fields that couldn't be matched are flagged so you can fill them manually.",
