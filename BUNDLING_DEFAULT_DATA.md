@@ -2,6 +2,64 @@
 
 This guide explains how to include a default data file that gets automatically loaded when users install the extension.
 
+## Quick Start: Using an Excel File
+
+**Yes, you can provide an Excel file!** Here's the simplest workflow:
+
+1. **Prepare your Excel file** with provider data (columns like: First Name, Last Name, NPI, DEA, Email, Address, etc.)
+2. **Export to CSV**: In Excel, go to File → Save As → Choose "CSV (Comma delimited) (*.csv)"
+3. **Convert CSV to JSON**: Use the conversion script below or an online converter
+4. **Place the JSON file** in your extension's `data/` folder as `default-data.json`
+5. **Package the extension** - the default data will be included automatically
+
+### Excel to JSON Conversion Script
+
+You can use this simple Node.js script to convert your CSV to the extension's JSON format:
+
+```javascript
+// convert-excel-to-default-data.js
+const fs = require('fs');
+const csv = require('csv-parser');
+
+const csvFilePath = 'your-providers.csv';
+const outputPath = 'data/default-data.json';
+
+const providers = [];
+
+fs.createReadStream(csvFilePath)
+  .pipe(csv())
+  .on('data', (row) => {
+    // Convert CSV row to provider object
+    providers.push({
+      firstName: row['First Name'] || row['firstName'],
+      lastName: row['Last Name'] || row['lastName'],
+      npi: row['NPI'] || row['npi'],
+      dea: row['DEA'] || row['dea'],
+      email: row['Email'] || row['email'],
+      // Add other fields as needed
+    });
+  })
+  .on('end', () => {
+    const defaultData = {
+      providers: providers,
+      mappings: [], // Add default mappings if you have them
+      version: '1.0.0'
+    };
+    
+    fs.writeFileSync(outputPath, JSON.stringify(defaultData, null, 2));
+    console.log(`Converted ${providers.length} providers to ${outputPath}`);
+  });
+```
+
+**To run:** `npm install csv-parser` then `node convert-excel-to-default-data.js`
+
+### Alternative: Online Conversion
+
+1. Export Excel to CSV
+2. Use an online CSV to JSON converter (like https://www.convertcsv.com/csv-to-json.htm)
+3. Format the JSON to match the structure below
+4. Save as `data/default-data.json`
+
 ## Extension Directory Structure
 
 Your Chrome extension should have a structure like this:

@@ -33,7 +33,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can the extension come with default data or mappings pre-loaded?",
     answer:
-      "Yes! The extension can be bundled with default sources that are automatically included when anyone downloads it. This can include: (1) Pre-configured mappings for common state board sites, (2) Template provider data structures, or (3) Default field mappings. When you package the extension, you can include a default data file (like `data/default-data.json`) that all users get on first install. The extension automatically loads this file on first installation. See the BUNDLING_DEFAULT_DATA.md guide in the repository for technical implementation details.",
+      "Yes! You can provide an Excel file with provider data, and it will be converted and bundled as the default data source. Simply export your Excel file to CSV, convert it to JSON format, and place it in the extension&apos;s `data/default-data.json` file. When users install the extension, this default data is automatically loaded. You can also include pre-configured mappings for common state board sites. See the BUNDLING_DEFAULT_DATA.md guide for step-by-step instructions on converting Excel files and bundling default data.",
   },
   {
     question: "How do I add provider information?",
