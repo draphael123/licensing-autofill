@@ -33,15 +33,16 @@ export default function LearnModeDemo() {
                   Mappings are saved by URL pattern, so they work for every
                   provider on that same board site.
                 </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  <strong>Team-Wide Shared Library:</strong> When you save a mapping, it&apos;s automatically synced to your team&apos;s shared library. Everyone on the team instantly gets access to new mappings — no manual file sharing needed.
+                </p>
                 <p className="text-gray-600 leading-relaxed">
-                  You can export and share mappings with teammates so everyone
-                  has the same library.
+                  Your provider data stays private on your machine. Only the field mappings (which fields map to which data types) are shared with the team.
                 </p>
               </div>
               <div className="bg-accent/10 border-l-4 border-accent p-4 rounded">
                 <p className="text-primary font-medium">
-                  💡 Tip: One team member maps a site, then shares the mapping
-                  file. Everyone else just imports it and starts auto-filling.
+                  💡 Tip: One team member maps a site, and everyone else automatically gets that mapping. New team members start with the full library already available.
                 </p>
               </div>
             </div>

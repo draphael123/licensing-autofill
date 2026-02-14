@@ -23,12 +23,12 @@ const faqs: FAQItem[] = [
   {
     question: "Is my data safe?",
     answer:
-      "All provider data is stored locally in your Chrome browser. Nothing leaves your machine. You can export/backup at any time.",
+      "Yes. All provider data (names, NPIs, addresses, etc.) is stored locally in your Chrome browser and never leaves your machine. Only field mappings (which form fields correspond to which data types) are synced to the team&apos;s shared library. Your sensitive provider information stays private.",
   },
   {
-    question: "Can I share mappings with teammates?",
+    question: "How does the team-wide shared library work?",
     answer:
-      "Yes — export your data from Settings and send the JSON file. They can import it into their extension.",
+      "When you map a site in Learn Mode and save it, that mapping automatically syncs to your team&apos;s shared library. Everyone on the team instantly gets access to it — no manual file sharing needed. New team members start with the full library already available. Only mappings are shared, never your provider data.",
   },
   {
     question: "What if a field doesn&apos;t fill correctly?",

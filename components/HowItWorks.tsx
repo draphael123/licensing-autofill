@@ -24,7 +24,7 @@ const steps = [
     number: "2",
     title: "Teach It Once (Learn Mode)",
     description:
-      "Navigate to any state board website. Click 'Start Learning.' Then click on each form field and tell the extension what goes there — first name, NPI, license number, etc. Save it, and the extension remembers that site's layout forever.",
+      "Navigate to any state board website. Click 'Start Learning.' Then click on each form field and tell the extension what goes there — first name, NPI, license number, etc. Save it, and the mapping is automatically shared with your entire team. Everyone benefits instantly.",
     icon: (
       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -98,7 +98,7 @@ export default function HowItWorks() {
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 {step.highlight && (
                   <div className="mt-4 text-sm font-medium text-accent">
-                    ✨ Key differentiator — map once, use forever
+                    ✨ Key differentiator — map once, entire team benefits instantly
                   </div>
                 )}
               </motion.div>
