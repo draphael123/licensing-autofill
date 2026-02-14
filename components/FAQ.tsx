@@ -33,7 +33,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can the extension come with default data or mappings pre-loaded?",
     answer:
-      "Yes! The extension can be bundled with default sources that are automatically included when anyone downloads it. This can include: (1) Pre-configured mappings for common state board sites, (2) Template provider data structures, or (3) Default field mappings. When you package the extension, you can include a default data file that all users get on first install. This ensures everyone starts with the same baseline mappings and can begin using the extension immediately without manual setup.",
+      "Yes! The extension can be bundled with default sources that are automatically included when anyone downloads it. This can include: (1) Pre-configured mappings for common state board sites, (2) Template provider data structures, or (3) Default field mappings. When you package the extension, you can include a default data file (like `data/default-data.json`) that all users get on first install. The extension automatically loads this file on first installation. See the BUNDLING_DEFAULT_DATA.md guide in the repository for technical implementation details.",
   },
   {
     question: "How do I add provider information?",
