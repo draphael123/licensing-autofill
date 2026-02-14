@@ -31,6 +31,16 @@ const faqs: FAQItem[] = [
       "When you map a site in Learn Mode and save it, that mapping automatically syncs to your team&apos;s shared library. Everyone on the team instantly gets access to it — no manual file sharing needed. New team members start with the full library already available. Only mappings are shared, never your provider data.",
   },
   {
+    question: "How do I add provider information?",
+    answer:
+      "You can add providers in two ways: (1) CSV Import: Click the ⚡ icon → Providers tab → Import CSV, then select your spreadsheet file. The CSV should have columns for name, NPI, DEA, addresses, credentials, etc. (2) Manual Entry: Click the ⚡ icon → Providers tab → + Add Provider, then fill out the form with the provider&apos;s information. You can add as many fields as needed — personal info, credentials, education, employment, addresses, and more.",
+  },
+  {
+    question: "What format should my CSV file be in?",
+    answer:
+      "Your CSV should have a header row with column names matching the data fields (e.g., First Name, Last Name, NPI, DEA, Email, etc.). The extension will map these columns to the appropriate provider data fields. You can include any of the 80+ supported fields. If you&apos;re unsure about the format, you can export a sample provider from the extension to see the structure, or add a few providers manually first to understand the field names.",
+  },
+  {
     question: "How do I select a provider when filling forms?",
     answer:
       "Click the ⚡ extension icon in your Chrome toolbar to open the extension popup. Go to the &quot;Auto Fill&quot; tab, and you&apos;ll see a searchable dropdown list showing all your providers. Each provider displays their name, NPI number, and other key identifiers to help you find the right one. You can type to search by name or NPI. Select the provider you want, then click &quot;Auto Fill This Page&quot; to populate the form with that provider&apos;s data.",
