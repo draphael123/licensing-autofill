@@ -1,0 +1,330 @@
+{
+  "providers": [
+    {
+      "id": "provider-1",
+      "sheetName": "Ashley E- NP",
+      "firstName": "Ashley",
+      "lastName": "Alicia Escoe",
+      "npi": "1700493426",
+      "email": "ashleyescoeuslicense@rx.me",
+      "dea": "ME7323835",
+      "address": "1721 Buttercup Ave"
+    },
+    {
+      "id": "provider-2",
+      "sheetName": "Bryana A, NP",
+      "firstName": "Bryana",
+      "lastName": "Anderson",
+      "npi": "1386001576",
+      "dea": "MA4122951",
+      "email": "bryana_brooks@yahoo.com",
+      "address": "1704 Kenmore Rd"
+    },
+    {
+      "id": "provider-3",
+      "sheetName": "Alexis F-H, NP",
+      "firstName": "Criminial",
+      "lastName": "History: NONE",
+      "npi": "1982333191",
+      "email": "viana.ashford@va.gov",
+      "dea": "MF8919512"
+    },
+    {
+      "id": "provider-4",
+      "sheetName": "Ashley G",
+      "firstName": "Ashley",
+      "lastName": "Grout",
+      "npi": "1699288845",
+      "dea": "MG6509105",
+      "email": "agrout1204@gmail.com",
+      "address": "9270 Solstice Cir."
+    },
+    {
+      "id": "provider-5",
+      "sheetName": "Bill C, NP",
+      "firstName": "William",
+      "lastName": "Raymond Carbonneau- DNP",
+      "npi": "1528158714",
+      "dea": "MC9901326",
+      "email": "bcarb70@gmail.com"
+    },
+    {
+      "id": "provider-6",
+      "sheetName": "Brittany A, RN",
+      "firstName": "Brittany",
+      "lastName": "Lynn Alexander",
+      "address": "8445 Seneca Dr NE",
+      "email": "brittany.alexander@fountain.net"
+    },
+    {
+      "id": "provider-7",
+      "sheetName": "Brooklyn K, RN",
+      "firstName": "Maiden",
+      "lastName": "Name: Kimble",
+      "address": "1208 Newton Rd",
+      "email": "kimble.brooklyn@yahoo.com"
+    },
+    {
+      "id": "provider-8",
+      "sheetName": "Bryce A, NP",
+      "firstName": "Bryce",
+      "lastName": "Dillon Amos",
+      "npi": "1952972390",
+      "dea": "MA6869359",
+      "email": "bryceamos05@gmail.com"
+    },
+    {
+      "id": "provider-9",
+      "sheetName": "Bryce H, RN",
+      "firstName": "Hair",
+      "lastName": "Color- Blonde",
+      "email": "brycehanley@outlook.com"
+    },
+    {
+      "id": "provider-10",
+      "sheetName": "Camryn B, RN",
+      "firstName": "Mom",
+      "lastName": "Sonja Burden Emergency Contact 904-237-8310",
+      "email": "camrynb93@gmail.com"
+    },
+    {
+      "id": "provider-11",
+      "sheetName": "Catherine H, MD",
+      "firstName": "Catherine",
+      "lastName": "Collins Herrington",
+      "npi": "1154705895",
+      "dea": "FH7935604",
+      "email": "isabel.vargas@ascension.org"
+    },
+    {
+      "id": "provider-12",
+      "sheetName": "Danielle B, NP",
+      "firstName": "Criminal",
+      "lastName": "History: NO",
+      "npi": "1841965936",
+      "dea": "MB6709034",
+      "address": "1212 Hill Ave",
+      "email": "dnboard23@gmail.com"
+    },
+    {
+      "id": "provider-13",
+      "sheetName": "Daniel F, RN",
+      "firstName": "Daniel",
+      "lastName": "Elizer Fis",
+      "email": "danielfis72@gmail.com"
+    },
+    {
+      "id": "provider-14",
+      "sheetName": "Deanna M, NP",
+      "firstName": "Deanna",
+      "lastName": "M",
+      "npi": "1073377842",
+      "dea": "MM8771657",
+      "address": "2201 Brun St.",
+      "email": "deanna.maher.rn@gmail.com"
+    },
+    {
+      "id": "provider-15",
+      "sheetName": "Doron S, MD",
+      "firstName": "Emergency",
+      "lastName": "Medical Contact:",
+      "npi": "1902064124",
+      "dea": "FS2487925",
+      "email": "doron@stember.co"
+    },
+    {
+      "id": "provider-16",
+      "sheetName": "Hilary M, RN",
+      "firstName": "Hilary",
+      "lastName": "Ann Morgan RN",
+      "address": "961 Glendale Dr",
+      "email": "hilarymsalisbury@gmail.com"
+    },
+    {
+      "id": "provider-17",
+      "sheetName": "Jacquelyn S, NP",
+      "firstName": "Jacquelyn",
+      "lastName": "Bliss Katchuk Sexton",
+      "npi": "1427662444",
+      "dea": "MS7975317",
+      "address": "2844 Chelsea Pl N",
+      "email": "jacquelyn.katchuk@gmail.com"
+    },
+    {
+      "id": "provider-18",
+      "sheetName": "Lauren D, RN",
+      "firstName": "Criminal",
+      "lastName": "History- None",
+      "email": "lauren.godbold@fountain.net"
+    },
+    {
+      "id": "provider-19",
+      "sheetName": "Lindsay B, NP",
+      "firstName": "Lindsay",
+      "lastName": "Hubbard Burden",
+      "dea": "MB8930566",
+      "npi": "1528158714",
+      "email": "linds01tahoe@gmail.com",
+      "address": "4072 Scenic Drive"
+    },
+    {
+      "id": "provider-20",
+      "sheetName": "Liz G, NP",
+      "firstName": "Mothers",
+      "lastName": "Maiden Name: McGrath",
+      "dea": "MG7991006",
+      "npi": "1346552742",
+      "email": "liz@fountain.net",
+      "address": "145 Merrimack Way"
+    },
+    {
+      "id": "provider-21",
+      "sheetName": "Mackinzie J, RN",
+      "firstName": "Mackinzie",
+      "lastName": "Joy Johnson",
+      "email": "kinziejohnson11@gmail.com"
+    },
+    {
+      "id": "provider-22",
+      "sheetName": "Martin V, NP",
+      "firstName": "Fort",
+      "lastName": "Myers, FL",
+      "npi": "1659969863",
+      "dea": "MV6251817",
+      "email": "mdv911@live.com"
+    },
+    {
+      "id": "provider-23",
+      "sheetName": "Megan R-R, NP",
+      "firstName": "Mothers",
+      "lastName": "Maiden Name: Huntly",
+      "npi": "1356957534",
+      "dea": "MR6120125",
+      "email": "megan.ryan-riffle@fountain.net"
+    },
+    {
+      "id": "provider-24",
+      "sheetName": "Michele F, NP",
+      "firstName": "First",
+      "lastName": "School: Fannin",
+      "npi": "1689326548",
+      "dea": "MF7168304",
+      "email": "michele.foster@fountain.net"
+    },
+    {
+      "id": "provider-25",
+      "sheetName": "Priya C, NP",
+      "firstName": "Priya",
+      "lastName": "Rahul Chaudhari",
+      "npi": "1952846909",
+      "dea": "MC9110002",
+      "email": "priyarn212@gmail.com"
+    },
+    {
+      "id": "provider-26",
+      "sheetName": "Rachel Razi, NP",
+      "firstName": "Los",
+      "lastName": "Angeles, CA 90049-4016",
+      "npi": "1134946098",
+      "email": "rachelrazi11@gmail.com",
+      "dea": "MR9343031"
+    },
+    {
+      "id": "provider-27",
+      "sheetName": "Sanjay Khubchandani, MD",
+      "firstName": "Emergency",
+      "lastName": "Contact: Soni Keswani, 943-5113",
+      "npi": "1093866972",
+      "dea": "BK6597807",
+      "address": "5164 Isleworth Country Club Dr",
+      "email": "sanjay.khubchandani@fountain.net"
+    },
+    {
+      "id": "provider-28",
+      "sheetName": "Shelby B, RN",
+      "firstName": "Hair",
+      "lastName": "Color",
+      "email": "shelby.bailey@fountain.net",
+      "address": "2165 McAfee RD NE"
+    },
+    {
+      "id": "provider-29",
+      "sheetName": "Skye S, NP",
+      "firstName": "Pomona",
+      "lastName": "Park, Florida,",
+      "npi": "1669169207",
+      "email": "skyesauls@hotmail.com",
+      "dea": "MS8706080",
+      "address": "382 Huntington Shortcut Rd"
+    },
+    {
+      "id": "provider-30",
+      "sheetName": "Summer D, NP",
+      "firstName": "Summer",
+      "lastName": "Lynn Denny",
+      "npi": "1740830405",
+      "dea": "MD9419777",
+      "email": "sumdennyfnp@gmail.com"
+    },
+    {
+      "id": "provider-31",
+      "sheetName": "Terray H, NP",
+      "firstName": "Mothers",
+      "lastName": "Maiden Name: Veronica Smith",
+      "npi": "1164941415",
+      "dea": "MH9741047",
+      "address": "2175 American Way Apt 527",
+      "email": "dthumphrey16@gmail.com"
+    },
+    {
+      "id": "provider-32",
+      "sheetName": "TIm M, NP",
+      "firstName": "Timothy",
+      "lastName": "Andre Mack",
+      "npi": "1104470590",
+      "dea": "MM5440033",
+      "email": "tmtravelaprn@gmail.com"
+    },
+    {
+      "id": "provider-33",
+      "sheetName": "Tzvi D, DO",
+      "firstName": "Tzvi",
+      "lastName": "Yosef Doron",
+      "npi": "1558794776",
+      "email": "dorontzvi@gmail.com",
+      "dea": "FD6064909",
+      "address": "276 Thorn St"
+    },
+    {
+      "id": "provider-34",
+      "sheetName": "Victor L, NP",
+      "firstName": "Victor",
+      "lastName": "L",
+      "npi": "1851621536",
+      "dea": "ML5090890",
+      "email": "vlopezarnp@gmail.com"
+    },
+    {
+      "id": "provider-35",
+      "sheetName": "Vivien L, NP",
+      "firstName": "Speaks",
+      "lastName": "Cantonese",
+      "npi": "1811688591",
+      "dea": "ML8109806",
+      "email": "vivienleenp@gmail.com"
+    },
+    {
+      "id": "provider-36",
+      "sheetName": "Florence O, Rn",
+      "firstName": "Florence",
+      "lastName": "Chinyere Ohia",
+      "address": "243 Marcliffe Dr, Apt 13",
+      "email": "florence.ohia@fountain.net"
+    }
+  ],
+  "mappings": [],
+  "version": "1.0.0",
+  "createdAt": "2026-02-15T00:05:42.011Z",
+  "sourceFile": "Provider _ Compliance Dashboard.xlsx",
+  "totalProviders": 36
+}
