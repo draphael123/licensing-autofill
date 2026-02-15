@@ -38,7 +38,7 @@ const faqs: FAQItem[] = [
   {
     question: "If I update the default data file, will it erase existing user mappings?",
     answer:
-      "No! When you update the default data file (by providing a new Excel file), the extension uses a merge strategy that preserves all user data. User-created mappings are never overwritten. New default providers are added to the existing list, and new default mappings are merged in (avoiding duplicates). Your existing mappings and provider data remain intact. The extension tracks the version of default data and only merges in new items when the version changes. See BUNDLING_DEFAULT_DATA.md for detailed update strategies.",
+      "No! User-created mappings are always preserved. When you update the default data file, you can choose how to handle providers: (1) Replace providers with new Excel data while keeping all mappings (recommended for periodic updates), or (2) Merge new providers with existing ones. Mappings (like &quot;NPI field → NPI data&quot;) are never touched, so they continue to work with the updated provider list. See BUNDLING_DEFAULT_DATA.md for detailed update strategies including the replace-providers-keep-mappings approach.",
   },
   {
     question: "How do I add provider information?",

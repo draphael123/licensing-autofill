@@ -4,13 +4,20 @@ This guide explains how to include a default data file that gets automatically l
 
 ## ⚠️ Important: Updating Default Data
 
-**When you update the default data file (e.g., provide a new Excel file), the extension will:**
+**When you update the default data file (e.g., provide a new Excel file), you can choose:**
+
+### Option A: Replace Providers, Keep Mappings (Recommended for Periodic Updates)
+- ✅ **Replace provider list** - Old providers replaced with new Excel data
+- ✅ **Preserve all mappings** - Field mappings (like "NPI field → NPI") stay intact
+- ✅ **Mappings still work** - Field mappings work with new provider data
+
+### Option B: Merge Everything
 - ✅ **Preserve all user-created mappings** - Never overwritten
 - ✅ **Merge new default providers** - Added to existing list
 - ✅ **Merge new default mappings** - Added without duplicates
 - ❌ **Never delete user data** - All user modifications are kept
 
-This means you can update the source file periodically without losing any user work!
+**Mappings are always preserved** - This means field mappings continue to work even when you update the provider list!
 
 ## Quick Start: Using an Excel File
 
@@ -420,10 +427,51 @@ chrome.runtime.onInstalled.addListener(async (details) => {
 });
 ```
 
+### Strategy 4: Replace Providers, Keep All Mappings (Recommended for Periodic Updates)
+
+**Use Case:** You update the provider list from Excel periodically and want to replace old providers with new ones, but keep all field mappings intact.
+
+```javascript
+chrome.runtime.onInstalled.addListener(async (details) => {
+  if (details.reason === 'update') {
+    const defaultData = await loadDefaultData();
+    const current = await chrome.storage.local.get(['mappings', 'providers', 'defaultDataVersion']);
+    
+    if (defaultData.version !== current.defaultDataVersion) {
+      // REPLACE providers with new default data
+      const updatedProviders = defaultData.providers || [];
+      
+      // PRESERVE ALL MAPPINGS - never touch them
+      const existingMappings = current.mappings || [];
+      
+      await chrome.storage.local.set({
+        mappings: existingMappings, // All mappings preserved - NPI field still maps to NPI
+        providers: updatedProviders, // Provider list replaced with new Excel data
+        defaultDataVersion: defaultData.version
+      });
+      
+      console.log('Providers updated, mappings preserved');
+      console.log(`Updated ${updatedProviders.length} providers`);
+      console.log(`Preserved ${existingMappings.length} mappings`);
+    }
+  }
+});
+```
+
+**How this works:**
+- ✅ **Mappings stay intact** - All field mappings (like "NPI field → NPI data") are preserved
+- ✅ **Providers are replaced** - Old provider list is replaced with new Excel data
+- ✅ **Mappings still work** - When auto-filling, the extension uses the new provider data with the existing mappings
+
+**Example:**
+- Before: Provider "John Doe" with NPI "1234567890", mapping says "NPI field → NPI"
+- After update: Provider list replaced, but mapping still says "NPI field → NPI"
+- Result: Extension still fills NPI field correctly, just with updated provider data
+
 ## Key Principles for Updates
 
 1. **Never overwrite user mappings** - User-created mappings should always be preserved
-2. **Merge, don't replace** - Add new default data to existing data
+2. **Choose your strategy** - Merge providers OR replace providers (mappings always preserved)
 3. **Use unique identifiers** - Use NPI, URL patterns, or IDs to avoid duplicates
 4. **Version your data** - Track which version of default data is installed
 5. **Give users control** - Consider letting users choose to reset to defaults if needed
