@@ -16,7 +16,7 @@ const steps = [
     number: "2",
     title: "Add Your First Provider",
     description:
-      "If the extension came with default provider data, it&apos;s already loaded! Otherwise, click the ⚡ icon in your toolbar → Providers tab → + Add Provider (fill out the form) or Import CSV (upload a spreadsheet). You can add providers manually one at a time, or import multiple providers at once from a CSV file with columns like Name, NPI, DEA, Address, etc.",
+      "The extension comes with 36+ providers pre-loaded! Default provider data (with NPIs, DEAs, emails, and more) is automatically included when you install. You can also add more providers by clicking the ⚡ icon → Providers tab → + Add Provider (fill out the form) or Import CSV (upload a spreadsheet).",
   },
   {
     number: "3",

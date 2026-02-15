@@ -56,9 +56,9 @@ const features = [
     ),
   },
   {
-    title: "CSV Import",
+    title: "Pre-Loaded Provider Data",
     description:
-      "Import multiple providers at once from a CSV file. Just ensure your spreadsheet has header columns (Name, NPI, DEA, etc.) and the extension handles the rest.",
+      "The extension comes with 36+ providers pre-loaded, including NPIs, DEAs, emails, and addresses. You can also import additional providers from CSV or add them manually.",
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path

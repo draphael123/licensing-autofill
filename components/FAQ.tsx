@@ -33,7 +33,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can the extension come with default data or mappings pre-loaded?",
     answer:
-      "Yes! You can provide an Excel file with provider data, and it will be converted and bundled as the default data source. Simply export your Excel file to CSV, convert it to JSON format, and place it in the extension&apos;s `data/default-data.json` file. When users install the extension, this default data is automatically loaded. You can also include pre-configured mappings for common state board sites. See the BUNDLING_DEFAULT_DATA.md guide for step-by-step instructions on converting Excel files and bundling default data.",
+      "Yes! The extension comes pre-loaded with default provider data. An Excel file with provider information has been converted and bundled as `data/default-data.json`. When users install the extension, this default data (36+ providers with NPIs, DEAs, emails, and other information) is automatically loaded. You can update the Excel file and re-run the conversion script to refresh the provider list. See HOW_TO_ADD_EXCEL_FILE.md and BUNDLING_DEFAULT_DATA.md for details on updating the default data.",
   },
   {
     question: "If I update the default data file, will it erase existing user mappings?",
